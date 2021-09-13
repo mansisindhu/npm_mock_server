@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        async function getData() {
+        let res = await fetch(`http://localhost:3000/api/products`, {
+            method: "POST",
+
+            body: JSON.stringify({
+                "id": 9000,
+                "name": "ury",
+                "price": 160,
+                "active": false
+            }),
+
+            headers: {"Content-Type": "application/json"},
+        });
+
+        let data = await res.json();
+
+        console.log(data);
+    }
+    </script>
+</body>
+
+</html>
